@@ -57,16 +57,16 @@
 	
 	<link rel="stylesheet" href="css/style.css">
 
-
+        <link rel="stylesheet" href="css/style.css">
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+       <link rel= "icon" href= "https://image.flaticon.com/icons/png/128/1054/1054436.png"/>
 	</head>
-	<body>
+	<body onload = "myFunction()">
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 	
@@ -78,9 +78,9 @@
 						<div class="container">
 							<div class="col-md-10 col-md-offset-1">
 								<div class="animate-box">
-									<h1>The Wedding</h1>
-									<h2>Wilson &amp; Mary</h2>
-									<p><span>27.12.2023</span></p>
+									<h1>You Are Invited </h1>
+									<h2> Pastor Wilson Wed Sister Ernestine</h2>
+
 								</div>
 							</div>
 						</div>
@@ -93,7 +93,7 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html">Our Wedding</a></h1>
+					<h1 id="fh5co-logo"><a href="index.html">W &amp; E </a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
@@ -104,7 +104,7 @@
 							<li><a href="when-where.html">When &amp; Where</a></li>
 							<li><a href="guest.html">Guest</a></li>
 							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="blog.html">Blog</a></li>
+							
 						</ul>
 					</nav>
 				</div>
@@ -119,14 +119,14 @@
 					<div class="col-md-6 col-md-offset-3 text-center">
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 							<img src="images/groom.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<p>hello everyone</p>
-							<h3>Kuwong Wilson</h3>
+							
+							<h3>Pst. Wilson</h3>
 						</div>
 						<div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
 						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 							<img src="images/bride.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<p>hello everyone</p>
-							<h3>Rose Mary</h3>
+							
+							<h3>Sis. Ernestine</h3>
 						</div>
 					</div>
 				</div>
@@ -134,25 +134,108 @@
 					<div class="col-md-8 col-md-offset-2">
 						<div class="col-md-12 text-center heading-section">
 							<h2>Are Getting Married</h2>
-							<p><strong>on Dec 27, 2023 &mdash; Bamenda, Cameroon</strong></p>
+							<center><h4>Save the Date</h4></center>
+							<h3><strong>Traditional Wedding: Wednesday December 27 &mdash; Awing Village, Bamenda</strong></h3>
+							 <h3><strong>White Wedding:      Friday December 29 &mdash; Emmanuel Baptist Church Allumakam (Small Babanki), Bamenda</strong></h3>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="fh5co-countdown">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center animate-box">
-					<p class="countdown">
-						<span id="days"></span>
-						<span id="hours"></span>
-						<span id="minutes"></span>
-						<span id="seconds"></span>
-					</p>
-				</div>
-			</div>
-		</div>
+		
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Birthday Counter</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel= "icon" href= "https://image.flaticon.com/icons/png/128/1054/1054436.png"/>
+<style>
+  body {
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    color: white;
+    text-align:center;
+    margin-top:150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:30px;
+    color: rgb(133, 101, 214)
+    ;
+  }
+  
+    @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+</style>
+<script>
+  
+document.getElementById("text-one").onload = function() {myFunction()};
+function myFunction() {
+  var person = prompt("Marriage Month and Day is December, 29th ", "12/29");
+  if (person != null) {
+    const timeLeft = document.getElementById('time-left')
+let yr= new Date().getFullYear();
+
+//add you married date in month day year format
+const birthday = new Date(person+ "/" +yr)
+console.log(birthday);
+
+
+const second = 1000
+const minute = second * 60
+const hour = minute * 60
+const day = hour * 24
+let timerId
+
+function countDown() {
+  const today = new Date()
+  
+  const timeSpan = birthday - today
+  //milliseconds
+  console.log(timeSpan)
+
+  if (timeSpan <= -day) {
+    timeLeft.innerHTML = 'Hope you had a nice weddng celebration!!'
+    clearInterval(timerId)
+    return
+  }
+
+  if (timeSpan <= 0) {
+    timeLeft.innerHTML = 'Today is The D day.. Please make sure your present.!!'
+    clearInterval(timerId)
+    return
+  }
+
+
+  const days = Math.floor(timeSpan / day)
+  const hours = Math.floor((timeSpan % day) / hour)
+  const minutes = Math.floor((timeSpan % hour) / minute)
+  const seconds = Math.floor((timeSpan % minute) / second)
+
+  timeLeft.innerHTML =
+    days + 'days ' + hours + 'hrs ' + minutes + 'mins ' + seconds + 'secs remaining'
+}
+
+timerId = setInterval(countDown, second)
+  }
+}
+</script>
+</head>
+<body onload = "myFunction()">
+  <h1 id="text-one"> Countdown to The White Wedding: </h1>
+  <h1 id="time-left"></h1>
+</body>
+</html>
 		<div id="fh5co-started" style="background-image:url(images/cover_bg_2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 			<div class="container">
@@ -197,7 +280,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<h2>Wilson &amp; Mary</h2>
+							<h2> Pst. Wilson &amp; Sis. Ernestine</h2>
 						</div>
 						<div class="col-md-6 col-md-offset-3 text-center">
 							<p class="fh5co-social-icons">
@@ -207,7 +290,7 @@
 								<a href="#"><i class="icon-dribbble2"></i></a>
 								<a href="#"><i class="icon-youtube"></i></a>
 							</p>
-							<p>Copyright 2023<a href="#"></a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://psalmistmarley@gmail.com/" target="_blank">Nyingcho Philemon</a></p>
+							<h3>Copyright 2023<a href="#"></a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by Nyingcho Philemon</h3>
 						</div>
 					</div>
 				</div>
@@ -223,9 +306,11 @@
 	<!-- END fh5co-wrapper -->
 
 	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
+	 <script  src="./script.js"></script>
+
 	</body>
 </html>
 
